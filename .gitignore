@@ -1,0 +1,6 @@
+test_*
+.idea/
+cache/
+data/
+__pycache__/
+params/
