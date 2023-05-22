@@ -10,6 +10,6 @@ RUN pip install --no-cache-dir --upgrade jax==0.3.25 -f https://storage.googleap
 COPY . /proj
 WORKDIR /proj
 RUN pip install --no-cache-dir .
-RUN pip install --no-cache-dir openpyxl 
+RUN pip install --no-cache-dir openpyxl
 ENV GUNICORN_CMD_ARGS "--bind=0.0.0.0:8000 --workers=1 --thread=1 --worker-class=gthread --forwarded-allow-ips='*'"
 CMD ["gunicorn", "dash_fold.app:server"]
