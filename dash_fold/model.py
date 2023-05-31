@@ -117,18 +117,6 @@ def predict(
     # @title Run Prediction
     display_images = True  # @param {type:"boolean"}
 
-    try:
-        K80_chk = os.popen('nvidia-smi | grep "Tesla K80" | wc -l').read()
-    except:  # noqa: E722
-        K80_chk = "0"
-        pass
-    if "1" in K80_chk:
-        print("WARNING: found GPU Tesla K80: limited to total length < 1000")
-        if "TF_FORCE_UNIFIED_MEMORY" in os.environ:
-            del os.environ["TF_FORCE_UNIFIED_MEMORY"]
-        if "XLA_PYTHON_CLIENT_MEM_FRACTION" in os.environ:
-            del os.environ["XLA_PYTHON_CLIENT_MEM_FRACTION"]
-
     # For some reason we need that to get pdbfixer to import
     if use_amber and f"/usr/local/lib/python{PYTHON_VERSION}/site-packages/" not in sys.path:
         sys.path.insert(0, f"/usr/local/lib/python{PYTHON_VERSION}/site-packages/")

@@ -6,6 +6,10 @@ We took Colabfold and rewrote it with the Dash framework as a proof of concept f
 
 Refer to [docker/Dockerfile](docker/Dockerfile) in order to install this app.
 
+## Usage
+
+This repo is packeged into a docker image which could be found under `kuparez/dashfold` on docker hub.
+
 ## Limitations
 
 - It's really slow. On a 32 core CPU it takes about 40 minutes to finish predictions. It's really slow for a browser app and the one that you cannot close or disconnect from;
